@@ -17,14 +17,14 @@ $(function() {
       },
       Confirmpassword: {
         required: true,
-        minilength : 5,
+        minlength : 5,
         equalTo : "#password"
       },
 
 
     },
 
-    massages: {
+    messages: {
       name: "Please enter your name",
       email: {
         required: "Please enter your email address",
@@ -38,7 +38,7 @@ $(function() {
 
       Confirmpassword : {
         required : "Please Re-enter the password ",
-        minilength : "Your password must be consist of at least 5 characters",
+        minlength : "Your password must be consist of at least 5 characters",
         equalTo : "Please enter the same password as above"
 
       }
@@ -47,6 +47,9 @@ $(function() {
     submitHandler: function(form) {
       form.submit();
 
+    },
+    errorPlacement: function(error, element) {
+      error.insertAfter(element);
     }
   })
 })
